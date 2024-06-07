@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array to Table</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+     
+var arr1 = [
+    [1, 2, 1, 24],
+    [8, 11, 9, 4],
+    [7, 0, 7, 27],
+    [7, 4, 28, 14],
+    [3, 10, 26, 7]
+];
+
+
+function createTable(array) {//html table creation
+    var table = '<table border="1">';
+    
+    // Looping through each row in the array
+    array.forEach(function(rowData) {
+        table += '<tr>';
+
+        // Looping through each element in the row
+        rowData.forEach(function(cellData) {
+            table += '<td>' + cellData + '</td>';
+        });
+
+        table += '</tr>';
+    });
+
+    table += '</table>';
+    return table;
+}
+
+var container = document.getElementById('container');//container to append the element
+container.innerHTML = createTable(arr1);//apending elememts to the container
+
+    </script>
+</body>
+</html>
